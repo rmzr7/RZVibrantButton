@@ -9,7 +9,72 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Configurations
+
+Vibrant buttons can be configured with one of the three supported button styles, **invert**, **translucent** and **fill** (see examples below).
+
+Some basic properties like **icon**, **text**, **font**, **alpha**, **corner radius**, **border width** and **background color** (for no vibrancy effect) can all be changed easily.
+
+The default vibrancy effect is for blur effect `UIBlurEffectStyleLight`. It could be set to any `UIVibrancyEffect` instance. For today extensions, it should be set to `[UIVibrancyEffect notificationCenterVibrancyEffect]`.
+
+## Note
+
+Though vibrant buttons can be placed anywhere, it is recommended that vibrant buttons with vibrancy effects should be placed in the `contentView` of `UIVisualEffectView` (except in today view).
+
+`UIVisualEffectView` can be created as follows.
+
+```swift
+var effectView:UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
+effectView.frame = self.view.bounds;
+self.view.addSubview(effectView)
+```
+
+## Examples
+
+The following images show the normal and highlighted (being pressed) button appearances.
+
+### Invert style with vibrancy effect
+
+![Invert Dark](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/invert2-dark.gif?raw=true)
+![Invert Extra Light](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/invert2-extralight.gif?raw=true)
+
+![Invert Dark](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/invert-dark.gif?raw=true)
+![Invert Extra Light](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/invert-extralight.gif?raw=true)
+
+````swift
+var invertButton:RZVibrantButton = RZVibrantButton(frame:CGRectZero, style:RZVibrantButtonStyle.Invert)
+invertButton.vibrancyEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
+invertButton.text = "Invert"
+invertButton.font = UIFont.systemFontOfSize(18.0)
+effectView.contentView.addSubview(invertButton)
+```
+
+### Translucent style with vibrancy effect
+
+![Translucent Dark](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/translucent-dark.gif?raw=true)
+![Translucent Extra Light](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/translucent-extralight.gif?raw=true)
+
+````swift
+var translucentButton:RZVibrantButton = RZVibrantButton(frame:CGRectZero, style:RZVibrantButtonStyle.Translucent)
+translucentButton.vibrancyEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
+translucentButton.text = "Translucent";
+translucentButton.font = UIFont.systemFontOfSize(18.0)
+effectView.contentView.addSubview(translucentButton)
+```
+
+### Translucent style without vibrancy effect
+
+![Translucent Dark](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/anycolor-dark.gif?raw=true)
+![Translucent Extra Light](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/anycolor-extralight.gif?raw=true)
+
+````swift
+var button:RZVibrantButton = RZVibrantButton(frame:CGRectZero, style:RZVibrantButtonStyle.Translucent)
+button.vibrancyEffect = nil;
+button.text = "Any Color";
+button.font = UIFont.systemFontOfSize(18.0)
+button.backgroundColor = UIColor.blackColor()
+effectView.contentView.addSubview(button)
+```
 
 ## Installation
 
@@ -19,6 +84,11 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "RZVibrantButton"
 ```
+
+
+### Manual Installation
+
+Simply add `RZVibrantButton.swift` to your project.
 
 ## Author
 
