@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/remzr7/RZVibrantButton.git", :tag => '0.1.0' }
   s.social_media_url = 'https://twitter.com/remzr7'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
