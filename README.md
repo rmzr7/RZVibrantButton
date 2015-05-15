@@ -5,7 +5,6 @@ RZVibrantButton is a stylish button with iOS 8 vibrancy effect built using Swift
 
 ![Screenshot](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/screenshot.png?raw=true)
 
-[![CI Status](http://img.shields.io/travis/remzr7/RZVibrantButton.svg?style=flat)](https://travis-ci.org/remzr7/RZVibrantButton)
 [![Version](https://img.shields.io/cocoapods/v/RZVibrantButton.svg?style=flat)](http://cocoapods.org/pods/RZVibrantButton)
 [![License](https://img.shields.io/cocoapods/l/RZVibrantButton.svg?style=flat)](http://cocoapods.org/pods/RZVibrantButton)
 [![Platform](https://img.shields.io/cocoapods/p/RZVibrantButton.svg?style=flat)](http://cocoapods.org/pods/RZVibrantButton)
