@@ -10,27 +10,25 @@
 Pod::Spec.new do |s|
   s.name             = "RZVibrantButton"
   s.version          = "0.1.0"
-  s.summary          = "A short description of RZVibrantButton."
+  s.summary          = "A stylish button that embodies iOS 8's Vibrancy Effects. Built in Swift."
   s.description      = <<-DESC
                        An optional longer description of RZVibrantButton
 
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/RZVibrantButton"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
-  s.author           = { "remzr7" => "remzr7@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/RZVibrantButton.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.homepage         = "https://github.com/remzr7/RZVibrantButton"
+  s.screenshots      = "https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/invert-dark.gif?raw=true", "https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/translucent-dark.gif?raw=true"
+  s.license          = {:type => 'MIT', :file => 'LICENSE'}
+  s.author           = { "Rameez Remsudeen" => "remzr7@gmail.com" }
+  s.source           = { :git => "https://github.com/remzr7/RZVibrantButton.git", :tag => '0.1.0' }
+  s.social_media_url = 'https://twitter.com/remzr7'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'RZVibrantButton' => ['Pod/Assets/*.png']
-  }
+
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
