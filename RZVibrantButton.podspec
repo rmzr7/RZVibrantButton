@@ -12,10 +12,7 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.summary          = "A stylish button that embodies iOS 8's Vibrancy Effects. Built in Swift."
   s.description      = <<-DESC
-                       An optional longer description of RZVibrantButton
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       RZVibrantButton is a stylish button with iOS 8 vibrancy effect built using Swift. It is a subclass of UIButton that has a simple yet elegant appearance and built-in support for UIVisualEffectView and UIVibrancyEffect classes introduced in iOS 8. Yet, it can be used on iOS 7 without the vibrancy effect. The design of this button is inspired by "AYVibrantButton" by alan yip.
                        DESC
   s.homepage         = "https://github.com/remzr7/RZVibrantButton"
   s.screenshots      = "https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/invert-dark.gif?raw=true", "https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/translucent-dark.gif?raw=true"
