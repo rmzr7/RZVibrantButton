@@ -1,7 +1,7 @@
 RZVibrantButton
 ===============
 
-RZVibrantButton is a stylish button with iOS 8 vibrancy effect built using Swift. Originally created by Alan Yip, this is the version of UIButton apple didn't implement, the one that works quite with iOS 8's design language.  It is a subclass of `UIButton` that has a simple yet elegant appearance and built-in support for `UIVisualEffectView` and `UIVibrancyEffect` classes introduced in iOS 8. Yet, it can be used on iOS 7 without the vibrancy effect. The design of this button is inspired by "AYVibrantButton" by alan yip.
+RZVibrantButton is a stylish button with iOS 8 vibrancy effect built using Swift. Originally created by Alan Yip, this is Swift the version of UIButton Apple didn't implement, the one that works quite with iOS 8's design language.  It is a subclass of `UIButton` that has a simple yet elegant appearance and built-in support for `UIVisualEffectView` and `UIVibrancyEffect` classes introduced in iOS 8. Yet, it can be used on iOS 7 without the vibrancy effect. 
 
 ![Screenshot](https://github.com/a1anyip/AYVibrantButton/blob/master/Readme/screenshot.png?raw=true)
 
