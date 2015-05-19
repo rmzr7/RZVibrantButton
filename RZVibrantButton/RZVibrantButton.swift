@@ -749,7 +749,6 @@ class RZVibrantButtonGroup:UIView
             
             var button = RZVibrantButton(frame: CGRectZero, style: style)
             
-            //MARK: clang diagnostic push
             if (forText == true)
             {
                 button.text = obj as? String
@@ -758,7 +757,6 @@ class RZVibrantButtonGroup:UIView
             {
                 button.icon = obj as? UIImage
             }
-            //MARK: clang diagnostic pop
             
             if (count == 1){
                 button.roundingCorners = UIRectCorner.AllCorners
