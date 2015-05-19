@@ -19,21 +19,21 @@ let kRZVibrantButtonDefaultFontSize:CGFloat = 14.0
 let kRZVibrantButtonDefaultBackgroundColor = UIColor.whiteColor()
 let kRZVibrantButtonDefaultStyle = RZVibrantButtonStyle.Invert
 
- 
 
-enum RZVibrantButtonStyle {
+
+public enum RZVibrantButtonStyle {
     case Invert
     case Transclucent
     case Fill
 }
 
-class RZVibrantButton:UIButton
+public class RZVibrantButton:UIButton
 {
-    var animated:Bool?
-    var animationDuration:CGFloat?
-    var translucencyAlphaNormal:CGFloat!
-    var translucencyAlphaHighlighted:CGFloat!
-    var cornerRadius:CGFloat{
+    public var animated:Bool?
+    public var animationDuration:CGFloat?
+    public var translucencyAlphaNormal:CGFloat!
+    public var translucencyAlphaHighlighted:CGFloat!
+    public var cornerRadius:CGFloat{
         get{
             return self.cornerRadius
         }
@@ -43,7 +43,7 @@ class RZVibrantButton:UIButton
             highlightedOverlay?.cornerRadius = newValue
         }
     }
-    var roundingCorners:UIRectCorner{
+    public var roundingCorners:UIRectCorner{
         get{
             return self.roundingCorners
         }
@@ -53,7 +53,7 @@ class RZVibrantButton:UIButton
             highlightedOverlay?.roundingCorners = newValue
         }
     }
-    var borderWidth:CGFloat{
+    public var borderWidth:CGFloat{
         get{
             return self.borderWidth
         }
@@ -64,8 +64,8 @@ class RZVibrantButton:UIButton
         }
         
     }
-    var text:String?
-    var style:RZVibrantButtonStyle{
+    public var text:String?
+    public var style:RZVibrantButtonStyle{
         get{
             return self.style
         }
@@ -75,8 +75,8 @@ class RZVibrantButton:UIButton
                 self.style = newValue
                 createOverlays()
                 
-//              set vibrancy effect here
-//                vibrancyEffect = newValue
+                //              set vibrancy effect here
+                //                vibrancyEffect = newValue
                 
                 setNeedsDisplay()
             }
@@ -84,13 +84,13 @@ class RZVibrantButton:UIButton
     }
     
     // the vibrancy effect to be applied on the button
-    var vibrancyEffect:UIVibrancyEffect? {
-    
-    get{
-    
-        return self.vibrancyEffect
-    }
-    
+    public var vibrancyEffect:UIVibrancyEffect? {
+        
+        get{
+            
+            return self.vibrancyEffect
+        }
+        
         set{
             self.vibrancyEffect = newValue
             normalOverlay?.removeFromSuperview()
@@ -112,7 +112,7 @@ class RZVibrantButton:UIButton
         }
     }
     
-    var icon:UIImage?{
+    public var icon:UIImage?{
         get{
             return self.icon
         }
@@ -124,7 +124,7 @@ class RZVibrantButton:UIButton
         }
     }
     
-    var currentFont:UIFont?{
+    public var currentFont:UIFont?{
         get{
             return self.currentFont
         }
@@ -135,7 +135,7 @@ class RZVibrantButton:UIButton
     
     
     // the background color when vibrancy effect is nil, or not supported.
-    override var backgroundColor:UIColor?{
+    override public var backgroundColor:UIColor?{
         get{
             
             return self.backgroundColor == nil ?kRZVibrantButtonDefaultBackgroundColor : self.backgroundColor
@@ -148,7 +148,7 @@ class RZVibrantButton:UIButton
         }
     }
     
-    override var alpha:CGFloat {
+    override public var alpha:CGFloat {
         
         get{
             return self.alpha
@@ -163,7 +163,7 @@ class RZVibrantButton:UIButton
                     self.normalOverlay?.alpha = 0.0
                     self.highlightedOverlay?.alpha = self.alpha
                 }
-                
+                    
                 else if (self.style == RZVibrantButtonStyle.Transclucent || self.style == RZVibrantButtonStyle.Fill)
                 {
                     normalOverlay?.alpha = translucencyAlphaHighlighted * alpha
@@ -187,7 +187,7 @@ class RZVibrantButton:UIButton
     
     // Mark Private vars
     private var visualEffectView:UIVisualEffectView?
-
+    
     
     private var normalOverlay:RZVibrantButtonOverlay?
     private var highlightedOverlay:RZVibrantButtonOverlay?
@@ -212,7 +212,7 @@ class RZVibrantButton:UIButton
     
     // this is the only method to initialize a vibrant button
     
-    required init(coder aDecoder:NSCoder)
+    required public init(coder aDecoder:NSCoder)
     {
         super.init(coder:aDecoder)
         commonInit()
@@ -220,8 +220,8 @@ class RZVibrantButton:UIButton
         self.icon = self.imageForState(UIControlState.Normal)
         self.text = self.titleForState(UIControlState.Normal)
     }
-
-    required init(frame:CGRect, style:RZVibrantButtonStyle)
+    
+    required public init(frame:CGRect, style:RZVibrantButtonStyle)
     {
         super.init(frame: frame)
         self.style = style
@@ -247,9 +247,9 @@ class RZVibrantButton:UIButton
         createOverlays()
         
         #if __IPHONE_8_0
-        // add the default vibrancy effect
-        vibrancyEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: .Light))
-
+            // add the default vibrancy effect
+            vibrancyEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: .Light))
+            
         #endif
         
     }
@@ -273,12 +273,12 @@ class RZVibrantButton:UIButton
         } else{
             normalOverlay?.alpha = translucencyAlphaNormal * alpha
         }
-    
+        
         if normalOverlay != nil
         {
             addSubview(normalOverlay!)
             addSubview(highlightedOverlay!)
-
+            
         }
         
         
@@ -359,7 +359,7 @@ enum RZVibrantButtonOverlayStyle {
 class RZVibrantButtonOverlay:UIView
 {
     // numeric configurations
-
+    
     var cornerRadius:CGFloat{
         get{
             return self.cornerRadius
@@ -387,7 +387,7 @@ class RZVibrantButtonOverlay:UIView
             setNeedsDisplay()
         }
     }
-
+    
     
     // icon image
     var icon:UIImage?{
@@ -469,14 +469,14 @@ class RZVibrantButtonOverlay:UIView
         self.init()
         self.style = style
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
     override func drawRect(rect: CGRect) {
-    
+        
         super.drawRect(rect)
         
         var size:CGSize = bounds.size
@@ -708,7 +708,7 @@ class RZVibrantButtonGroup:UIView
         initButtonGroup(buttonIcons, style: style, forText:false)
         
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -721,7 +721,7 @@ class RZVibrantButtonGroup:UIView
         var size = self.bounds.size
         var buttonWidth:CGFloat = size.width / CGFloat(buttonCount)
         var buttonHeight:CGFloat = size.height
-    
+        
         buttons?.enumerateObjectsUsingBlock { (button, idx, stop) -> Void in
             
             var b:RZVibrantButton = button as! RZVibrantButton
@@ -733,8 +733,8 @@ class RZVibrantButtonGroup:UIView
     
     func buttonAtIndex(index:UInt) -> RZVibrantButton!{
         return buttons?.objectAtIndex(Int(index)) as! RZVibrantButton
-        }
-
+    }
+    
     private func initButtonGroup(objects:NSArray, style:RZVibrantButtonStyle, forText:Bool){
         cornerRadius = kRZVibrantButtonDefaultCornerRadius
         borderWidth = kRZVibrantButtonDefaultBorderWidth
@@ -749,6 +749,7 @@ class RZVibrantButtonGroup:UIView
             
             var button = RZVibrantButton(frame: CGRectZero, style: style)
             
+            //MARK: clang diagnostic push
             if (forText == true)
             {
                 button.text = obj as? String
@@ -757,6 +758,7 @@ class RZVibrantButtonGroup:UIView
             {
                 button.icon = obj as? UIImage
             }
+            //MARK: clang diagnostic pop
             
             if (count == 1){
                 button.roundingCorners = UIRectCorner.AllCorners
@@ -769,7 +771,7 @@ class RZVibrantButtonGroup:UIView
                 button.cornerRadius = 0
                 button.hideRightBorder = true
             }
-        
+            
             self.addSubview(button)
             buttons.addObject(button)
         }
